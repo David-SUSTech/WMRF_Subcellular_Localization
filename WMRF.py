@@ -123,7 +123,7 @@ def create_advanced_pipeline():
 def main():
     # 1. Read and preprocess data
     target_column = 'Membrane'
-    df = pd.read_csv('Membrane均衡样本.csv').dropna(subset=['Sequence', target_column])
+    df = pd.read_csv('Membrane均衡样本.csv').dropna(subset=['Sequence', target_column]) #Alter 'Membrane' to other compartment names, such as Cytoplasm, Mitochondrion, etc.
     valid_sequences, valid_indices = preprocess_sequences(df['Sequence'])
     valid_labels = df.iloc[valid_indices][target_column]
 
